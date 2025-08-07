@@ -28,14 +28,14 @@
     "mongoose": "^8.17.0",
     "nodemailer": "^7.0.5",
     "resend": "^4.8.0",
-    "winston": "^3.17.0"
+    "winston": "^3.17.0",
+    "typescript": "^5.9.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/node": "^24.1.0",
     "nodemon": "^3.1.10",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^5.9.2"
+    "ts-node-dev": "^2.0.0"
   }
 }
