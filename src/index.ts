@@ -27,7 +27,11 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
+
 app.use("/api", limiter, userRoute);
+app.get("/health", (req, res) => {
+  res.status(200).json({ message: "Server is running" });
+});
 
 const connectDB = async () => {
   try {
