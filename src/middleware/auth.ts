@@ -20,13 +20,13 @@ export const authorizeToken = (
   try {
     const decodedToken = verifyToken(token);
     req.body = decodedToken;
-  } catch (error: any) {
+  } catch (error) {
     logError(
       "POST",
       req.url,
       "middleware::Error in authorizeToken middleware",
       req.body,
-      error.message
+      error
     );
   }
   next();

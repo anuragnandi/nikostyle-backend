@@ -27,7 +27,6 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-
 app.use("/api", limiter, userRoute);
 app.get("/health", (req, res) => {
   res.status(200).json({ message: "Server is running" });
@@ -39,8 +38,8 @@ const connectDB = async () => {
       dbName: "log-pilot-db",
     });
     console.log(`MongoDb connected: ${conn.connection.host}`);
-  } catch (error: any) {
-    console.error(`Error: ${error.message}`);
+  } catch (error) {
+    console.error(`Error: ${error}`);
   }
 };
 

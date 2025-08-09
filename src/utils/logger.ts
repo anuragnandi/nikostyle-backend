@@ -81,7 +81,7 @@ export const logError = (
   url: string,
   location: string,
   request: string,
-  error: any
+  error: unknown
 ) => {
   logger.error(
     [
