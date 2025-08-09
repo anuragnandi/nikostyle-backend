@@ -43,7 +43,8 @@ const connectDB = async () => {
   }
 };
 
-const PORT = parseInt(process.env.PORT || "5000", 10);
+const PORT = parseInt(process.env.PORT || "3001", 10);
+console.log(`Environment PORT: ${process.env.PORT}`);
 
 connectDB().then(() =>
   app.listen(PORT, "0.0.0.0", () => {
