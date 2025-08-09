@@ -1,3 +1,4 @@
+//TODO: check why this is not logging
 import app from "./app";
 import config from "./config";
 import logger from "./utils/logger";
