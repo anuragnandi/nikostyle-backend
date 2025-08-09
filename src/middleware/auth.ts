@@ -28,6 +28,7 @@ export const authorizeToken = (
       req.body,
       error
     );
+    return res.status(403).json({ message: "Invalid token" });
   }
-  next();
+  return next();
 };

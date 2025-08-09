@@ -1,4 +1,3 @@
-import { NextFunction } from "express";
 import path from "path";
 import { format, createLogger, transports } from "winston";
 

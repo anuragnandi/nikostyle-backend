@@ -3,13 +3,13 @@ dotenv.config();
 
 import fs from "fs";
 import path from "path";
-import { Resend } from "resend";
 import { logError, logInfo, logWarn } from "../utils/logger";
-import { ServiceResponse } from "../types";
+import { ServiceResponse } from "../types/ServiceResponseType";
 import nodemailer from "nodemailer";
+// import { Resend } from "resend";
+// import config from "../config/index";
 
-const resend = new Resend(process.env.RESEND_SECRET_KEY as string);
-const myEmailId = process.env.AUTHOR_EMAIL_ADDRESS as string;
+// const resend = new Resend(config.resendKey);
 
 const EmailVerificationService = async (
   email: string,
@@ -45,7 +45,7 @@ const EmailVerificationService = async (
       html: htmlWithOTP, // HTML body
     });
     // const response = await resend.emails.send({
-    //   from: myEmailId,
+    // from: config.hostEmail,
     //   to: email,
     //   subject: subject,
     //   html: htmlWithOTP,

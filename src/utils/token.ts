@@ -1,17 +1,12 @@
 import jwt from "jsonwebtoken";
+import config from "../config/index";
 
 export const createAccessToken = (id: string) => {
-  return jwt.sign({ userId: id }, process.env.ACCESS_TOKEN_KEY as string, {
+  return jwt.sign({ userId: id }, config.accessToken, {
     expiresIn: "90d",
   });
 };
 
-export const createRefreshToken = (id: string) => {
-  return jwt.sign({ userId: id }, process.env.REFRESH_TOKEN_KEY as string, {
-    expiresIn: "1d",
-  });
-};
-
 export const verifyToken = (token: string) => {
-  return jwt.verify(token, process.env.ACCESS_TOKEN_KEY as string);
+  return jwt.verify(token, config.accessToken);
 };
